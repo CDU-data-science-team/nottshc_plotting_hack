@@ -15,8 +15,18 @@ knitr::opts_chunk$set(
 
 # nottshc_plotting_hack
 
-## Existing examples
+## Accessibility
 
+- https://twitter.com/FrankElavsky/status/1351311898428362754?s=20
+- https://data.gov.uk/accessibility
+
+## Books
+
+- https://ggplot2-book.org/
+- https://clauswilke.com/dataviz/
+- https://plotly-r.com/index.html
+
+## Other resources
 
 - https://www.trafforddatalab.io/
 - https://github.com/crsh/papaja/blob/c6648ad5fb1c57fbb57aa4575a1fdfd427e54d1b/R/theme_apa.R
@@ -26,14 +36,6 @@ knitr::opts_chunk$set(
 - https://ggplot2-book.org/polishing.html
 - https://emilhvitfeldt.github.io/paletteer/
 - https://github.com/yutannihilation/gghighlight
-- https://twitter.com/FrankElavsky/status/1351311898428362754?s=20
-
-## Other resources
-
-- https://ggplot2-book.org/
-- https://clauswilke.com/dataviz/
-- https://plotly-r.com/index.html
-
 
 ## Parts of the plot we want to change
 
