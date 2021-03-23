@@ -17,6 +17,8 @@ mod_plots_ui <- function(id){
       column(9,
              tabsetPanel(
                tabPanel("Scatter plot",
+                        sliderInput(ns("sub_species"), "Categories",
+                                    min = 1, max = 20, value = 3),
                         plotOutput(ns("scatter"))
                ),
                tabPanel("Bar graph",
@@ -40,8 +42,13 @@ mod_plots_server <- function(id){
     output$scatter <- renderPlot({
       
       palmerpenguins::penguins %>% 
+        dplyr::mutate(subspecies = factor(sample(1 : input$sub_species, 
+                                                 nrow(palmerpenguins::penguins), 
+                                                 replace = TRUE))) %>% 
         ggplot2::ggplot(ggplot2::aes(x = bill_length_mm,
-                                     y = flipper_length_mm)) + 
+                                     y = flipper_length_mm,
+                                     group = subspecies,
+                                     colour = subspecies)) + 
         ggplot2::geom_point()
     })
     
