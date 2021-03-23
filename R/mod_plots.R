@@ -61,9 +61,3 @@ mod_plots_server <- function(id, penguins_data){
     
   })
 }
-
-## To be copied in the UI
-# 
-
-## To be copied in the server
-# 
