@@ -16,10 +16,20 @@
 
 ### Font size
 
+LARGE!
+
 ### Background
+
+WHITE!
 
 ### Colours
 
+COLOURBLINDFRIENDLY!
+
 ### Shapes
 
+DIFFERENT CATEGORIES NEED DIFFERENT SHAPES!
+
 ### Patterns
+
+PATTERNS TO HELP WITH COLOURS!
