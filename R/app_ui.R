@@ -10,7 +10,8 @@ app_ui <- function(request) {
     golem_add_external_resources(),
     # Your application UI logic 
     fluidPage(
-      h1("nottshc_plotting_hack")
+      h1("nottshc_plotting_hack"),
+      mod_plots_ui("plots_ui_1")
     )
   )
 }
