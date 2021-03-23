@@ -24,6 +24,7 @@
 -   <https://ggplot2-book.org/polishing.html>
 -   <https://emilhvitfeldt.github.io/paletteer/>
 -   <https://github.com/yutannihilation/gghighlight>
+-   <https://ggplot2.tidyverse.org/reference/scale_shape.html>
 
 ## Parts of the plot we want to change
 
