@@ -42,7 +42,8 @@ mod_plots_server <- function(id, penguins_data){
                                      y = flipper_length_mm,
                                      group = subspecies,
                                      colour = subspecies)) + 
-        ggplot2::geom_point()
+        ggplot2::geom_point() +
+        nottshcPlottingHack::theme_nottshc()
     })
     
     output$bargraph <- renderPlot({
@@ -56,7 +57,9 @@ mod_plots_server <- function(id, penguins_data){
         dplyr::sample_n(input$penguin_number) %>% 
         ggplot2::ggplot(ggplot2::aes(x = name, y = flipper_length_mm,
                                      fill = subspecies, group = subspecies)) + 
-        ggplot2::geom_bar(stat = "identity")
+        ggplot2::geom_bar(stat = "identity") +
+        ggplot2::coord_flip() + 
+        nottshcPlottingHack::theme_nottshc()
     })
     
   })
