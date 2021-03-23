@@ -25,6 +25,8 @@ knitr::opts_chunk$set(
 - https://coolbutuseless.github.io/2020/04/01/introducing-ggpattern-pattern-fills-for-ggplot/
 - https://ggplot2-book.org/polishing.html
 - https://emilhvitfeldt.github.io/paletteer/
+- https://github.com/yutannihilation/gghighlight
+- https://twitter.com/FrankElavsky/status/1351311898428362754?s=20
 
 ## Other resources
 
