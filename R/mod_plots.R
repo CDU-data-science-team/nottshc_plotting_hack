@@ -12,13 +12,9 @@ mod_plots_ui <- function(id){
   tagList(
     
     fluidRow(
-      column(3,
-      ),
-      column(9,
+      column(12,
              tabsetPanel(
                tabPanel("Scatter plot",
-                        sliderInput(ns("sub_species"), "Categories",
-                                    min = 1, max = 20, value = 3),
                         plotOutput(ns("scatter"))
                ),
                tabPanel("Bar graph",
@@ -35,16 +31,13 @@ mod_plots_ui <- function(id){
 #' plots Server Functions
 #'
 #' @noRd 
-mod_plots_server <- function(id){
+mod_plots_server <- function(id, penguins_data){
   moduleServer( id, function(input, output, session){
     ns <- session$ns
     
     output$scatter <- renderPlot({
       
-      palmerpenguins::penguins %>% 
-        dplyr::mutate(subspecies = factor(sample(1 : input$sub_species, 
-                                                 nrow(palmerpenguins::penguins), 
-                                                 replace = TRUE))) %>% 
+      penguins_data() %>% 
         ggplot2::ggplot(ggplot2::aes(x = bill_length_mm,
                                      y = flipper_length_mm,
                                      group = subspecies,
@@ -56,12 +49,13 @@ mod_plots_server <- function(id){
       
       penguin_names <- paste(c("Steve", "Mark", "Karen"), 1 : 400)
       
-      palmerpenguins::penguins %>% 
+      penguins_data() %>% 
         dplyr::mutate(name = sample(penguin_names, 
                                     nrow(palmerpenguins::penguins), 
                                     replace = FALSE)) %>% 
         dplyr::sample_n(input$penguin_number) %>% 
-        ggplot2::ggplot(ggplot2::aes(x = name, y = flipper_length_mm)) + 
+        ggplot2::ggplot(ggplot2::aes(x = name, y = flipper_length_mm,
+                                     fill = subspecies, group = subspecies)) + 
         ggplot2::geom_bar(stat = "identity")
     })
     

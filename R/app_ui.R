@@ -11,7 +11,14 @@ app_ui <- function(request) {
     # Your application UI logic 
     fluidPage(
       h1("nottshc_plotting_hack"),
-      mod_plots_ui("plots_ui_1")
+      
+      fluidRow(
+        column(3,
+               sliderInput("sub_species", "Categories",
+                           min = 1, max = 20, value = 3)),
+        column(9,
+               mod_plots_ui("plots_ui_1"))
+      )
     )
   )
 }
